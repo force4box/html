@@ -1,0 +1,43 @@
+.utl{
+	text-align: left;
+}
+.utc{
+	text-align: center;
+}
+.utr{
+	text-align: right;
+}
+.ustrong{
+	font-weight: bold;
+}
+
+/*独自*/
+//スマホのみに効く改行
+.uspbr{
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: block;
+	}
+}
+
+//ＰＣ非表示
+.upc{
+	display: none !important;
+	@media screen and (max-width: 768px) {
+		display: block !important;
+	}
+}
+
+//ＳＰ非表示
+.usp{
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+//clearfix
+.clearfix:after {
+content: "";
+clear: both;
+display: block;
+}
