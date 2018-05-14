@@ -40,3 +40,39 @@ $padding02:10px 16px;
 $bg_tit:#e3e3e3;
 $small: 768px;
 
+
+//flex設定
+@mixin flex00 {
+    display:-webkit-box;/*--- Androidブラウザ用 ---*/
+    display:-ms-flexbox;/*--- IE10 ---*/
+    display:-webkit-flex;/*--- safari（PC）用 ---*/
+    display:flex;
+}
+
+@mixin flex {
+    display:-webkit-box;/*--- Androidブラウザ用 ---*/
+    display:-ms-flexbox;/*--- IE10 ---*/
+    display:-webkit-flex;/*--- safari（PC）用 ---*/
+    display:flex;
+	-moz-flex-wrap:wrap;
+	-ms-flex-wrap:wrap;
+	flex-wrap:wrap;
+	-webkit-justify-content: space-between; /* Safari */
+	justify-content:         space-between;
+}
+
+
+//メディアクエリ設定
+$breakpoints: (
+  'sm': 'screen and (max-width: 400px)',
+  'md': 'screen and (max-width: 767px)',
+  'lg': 'screen and (max-width: 1119px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+

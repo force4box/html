@@ -20,20 +20,41 @@
 	}
 }
 
-//ＰＣ非表示
-.upc{
+
+
+// ＰＣ・ＳＰ表示非表示
+// ===========================================
+//ＰＣで表示（ＳＰ非表示）
+.dpc{
+	display: block !important;
+	@include mq() { // 引数を省略（初期値はmdの768px）
+		display: none !important;
+	}
+}
+
+img.dpc{
+	display: inline-block !important;
+	@include mq() { // 引数を省略（初期値はmdの768px）
+		display: none !important;
+	}
+}
+
+//SPで表示（ＰＣ非表示）
+.dsp{
 	display: none !important;
-	@media screen and (max-width: 768px) {
+	@include mq() { // 引数を省略（初期値はmdの768px）
 		display: block !important;
 	}
 }
 
-//ＳＰ非表示
-.usp{
-	@media screen and (max-width: 768px) {
-		display: none;
+img.dsp{
+	display: none !important;
+	@include mq() { // 引数を省略（初期値はmdの768px）
+		display: inline-block !important;
 	}
 }
+
+
 
 //clearfix
 .clearfix:after {
